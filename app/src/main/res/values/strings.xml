@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">RookMotionChallenge</string>
+    <string name="login">Log In</string>
+    <string name="name">Name</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="new_account">New account</string>
+    <string name="terms_cond">I have read and agree to the privacy policy and terms of service</string>
+    <string name="submit">Submit</string>
+    <string name="forgot">Forgot your password?</string>
+    <string name="reset">Write your e-mail, to reset your password</string>
+
 </resources>

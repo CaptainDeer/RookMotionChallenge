@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1043288095088",
+    "project_id": "rookmotionchallenge",
+    "storage_bucket": "rookmotionchallenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043288095088:android:10d3dab6a334df3625b7b5",
+        "android_client_info": {
+          "package_name": "com.captaindeer.rookmotionchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043288095088-f92234ehumpeq2c1b9sl6udprlcvi0qh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.captaindeer.rookmotionchallenge",
+            "certificate_hash": "a9695a225406dd168d148bd8b346ee80e1ddf205"
+          }
+        },
+        {
+          "client_id": "1043288095088-73mff99fekvqcdi8n9mm1d27tbk6rhev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCRCThx2ysDRDh1M5-UsLBNcppzVnKphQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043288095088-73mff99fekvqcdi8n9mm1d27tbk6rhev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
