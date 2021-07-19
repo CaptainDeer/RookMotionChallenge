@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.captaindeer.rookmotionchallenge.data.local.entities.UserEntity
 import com.captaindeer.rookmotionchallenge.databinding.FragmentHomeBinding
+import com.captaindeer.rookmotionchallenge.ui.adapters.UsersAdapter
 
 class HomeFragment : Fragment(), HomeInterface.View {
 
@@ -16,6 +17,8 @@ class HomeFragment : Fragment(), HomeInterface.View {
     private val binding get() = _binding!!
 
     private var presenter: HomePresenter? = null
+
+    private lateinit var adapter: UsersAdapter
 
     private var users = arrayListOf<UserEntity>()
 
@@ -35,14 +38,20 @@ class HomeFragment : Fragment(), HomeInterface.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvHome.setHasFixedSize(true)
-        binding.rvHome.layoutManager = LinearLayoutManager(requireContext())
+        initRecyclerView()
 
         presenter?.getAllUsers()
     }
 
     override fun setListUsers(users: ArrayList<UserEntity>) {
-//        TODO("Not yet implemented")
+        adapter.updateData(users)
+    }
+
+    fun initRecyclerView() {
+        adapter = UsersAdapter(users)
+        binding.rvHome.setHasFixedSize(true)
+        binding.rvHome.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvHome.adapter = adapter
     }
 
     override fun onError(msg: String) {
@@ -57,6 +66,5 @@ class HomeFragment : Fragment(), HomeInterface.View {
     override fun onStop() {
         super.onStop()
         presenter?.onCancel()
-
     }
 }
