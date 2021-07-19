@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Login
+    <dimen name="login_img">80dp</dimen>
+
+    //Text
+    <dimen name="h1">60sp</dimen>
+    <dimen name="h2">50sp</dimen>
+    <dimen name="h3">40sp</dimen>
+    <dimen name="h4">30sp</dimen>
+    <dimen name="h5">20sp</dimen>
+</resources>
