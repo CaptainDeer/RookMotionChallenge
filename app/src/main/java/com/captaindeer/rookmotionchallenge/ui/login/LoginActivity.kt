@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.captaindeer.rookmotionchallenge.MainActivity
+import com.captaindeer.rookmotionchallenge.ui.MainActivity
 import com.captaindeer.rookmotionchallenge.databinding.ActivityLoginBinding
 import com.captaindeer.rookmotionchallenge.ui.forgotpassword.ForgotPasswordDialog
 import com.captaindeer.rookmotionchallenge.ui.registry.RegistryActivity
