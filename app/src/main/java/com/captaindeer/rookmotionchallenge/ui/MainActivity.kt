@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.captaindeer.rookmotionchallenge.R
 import com.captaindeer.rookmotionchallenge.databinding.ActivityMainBinding
+import com.captaindeer.rookmotionchallenge.ui.home.HomeFragment
 import com.captaindeer.rookmotionchallenge.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 
@@ -26,6 +27,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_main, HomeFragment())
+            commit()
+        }
 
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
