@@ -27,11 +27,12 @@ class RegistryActivity : AppCompatActivity(), RegistryInterface.View {
                 onError("The passwords doesn´t match")
             else if (!binding.cbTermsCond.isChecked)
                 onError("You need to accept terms and conditions")
-            else
+            else {
                 presenter?.setNewUser(
                     binding.etEmailNew.text.toString(),
                     binding.etPasswordNew.text.toString()
                 )
+            }
         }
     }
 
@@ -44,4 +45,5 @@ class RegistryActivity : AppCompatActivity(), RegistryInterface.View {
     override fun onError(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
+
 }

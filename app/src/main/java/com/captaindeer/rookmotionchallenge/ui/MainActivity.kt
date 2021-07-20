@@ -3,6 +3,7 @@ package com.captaindeer.rookmotionchallenge.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -16,10 +17,11 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var toggle: ActionBarDrawerToggle
 
     private var auth: FirebaseAuth? = null
 
+    private var email: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+
+        val header = binding.navView.getHeaderView(0)
+        email = header.findViewById(R.id.tv_nav_mail) as TextView
+        email!!.text = auth!!.currentUser!!.email.toString()
+
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fl_main, HomeFragment())
