@@ -35,10 +35,6 @@ class MainActivity : AppCompatActivity() {
         email!!.text = auth!!.currentUser!!.email.toString()
 
 
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_main, HomeFragment())
-            commit()
-        }
 
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
