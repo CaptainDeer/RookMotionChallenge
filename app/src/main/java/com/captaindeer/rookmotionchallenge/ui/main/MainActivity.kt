@@ -1,4 +1,4 @@
-package com.captaindeer.rookmotionchallenge.ui
+package com.captaindeer.rookmotionchallenge.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.captaindeer.rookmotionchallenge.R
 import com.captaindeer.rookmotionchallenge.databinding.ActivityMainBinding
-import com.captaindeer.rookmotionchallenge.ui.home.HomeFragment
 import com.captaindeer.rookmotionchallenge.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 
@@ -18,9 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var toggle: ActionBarDrawerToggle
-
     private var auth: FirebaseAuth? = null
-
     private var email: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +30,6 @@ class MainActivity : AppCompatActivity() {
         val header = binding.navView.getHeaderView(0)
         email = header.findViewById(R.id.tv_nav_mail) as TextView
         email!!.text = auth!!.currentUser!!.email.toString()
-
-
 
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
@@ -53,7 +48,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
     }
 
     override fun onBackPressed() {

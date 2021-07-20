@@ -3,10 +3,11 @@ package com.captaindeer.rookmotionchallenge.ui.userdetail
 import com.captaindeer.rookmotionchallenge.data.local.entities.UserEntity
 
 interface UserDetailInterface {
-    interface View{
+    interface View {
         fun setUserInfo(userEntity: UserEntity)
     }
-    interface  Presenter {
-        fun getUserDetail(id:Int)
+
+    interface Presenter {
+        fun getUserDetail(id: Int)
     }
 }

@@ -37,10 +37,8 @@ class HomeFragment : Fragment(), HomeInterface.View,
         super.onViewCreated(view, savedInstanceState)
 
         initRecyclerView()
-
         presenter?.getAllUsers()
         binding.searchView.setOnQueryTextListener(this)
-
     }
 
     override fun setListUsers(users: ArrayList<UserEntity>) {

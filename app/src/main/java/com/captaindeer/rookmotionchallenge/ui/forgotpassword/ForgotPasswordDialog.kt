@@ -1,5 +1,7 @@
 package com.captaindeer.rookmotionchallenge.ui.forgotpassword
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,14 +16,13 @@ class ForgotPasswordDialog : DialogFragment() {
     private var _binding: DialogForgotPasswordBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = DialogForgotPasswordBinding.inflate(inflater, container, false)
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         binding.btnAccept.setOnClickListener {
             if (binding.etEmailReset.text.isNullOrBlank()) {
