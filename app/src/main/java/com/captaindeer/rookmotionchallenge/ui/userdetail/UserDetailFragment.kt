@@ -12,8 +12,7 @@ import com.squareup.picasso.Picasso
 
 class UserDetailFragment : Fragment(), UserDetailInterface.View {
 
-    val args: UserDetailFragmentArgs by navArgs()
-
+    private val args: UserDetailFragmentArgs by navArgs()
     private var _binding: FragmentUserDetailBinding? = null
     private val binding get() = _binding!!
     private var presenter: UserDetailPresenter? = null
@@ -21,7 +20,7 @@ class UserDetailFragment : Fragment(), UserDetailInterface.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        presenter = UserDetailPresenter(requireContext(),this)
+        presenter = UserDetailPresenter(requireContext(), this)
     }
 
     override fun onCreateView(
@@ -41,6 +40,4 @@ class UserDetailFragment : Fragment(), UserDetailInterface.View {
         binding.tvUserEmail.text = userEntity.email
         Picasso.get().load(userEntity.avatar).into(binding.ivUserDetail)
     }
-
-
 }

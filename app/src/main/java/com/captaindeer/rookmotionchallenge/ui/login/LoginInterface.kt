@@ -2,12 +2,12 @@ package com.captaindeer.rookmotionchallenge.ui.login
 
 interface LoginInterface {
 
-    interface View{
+    interface View {
         fun onSuccess()
-        fun onError(msg:String)
+        fun onError(msg: String)
     }
 
-    interface Presenter{
+    interface Presenter {
         fun goToLogin(email: String, password: String)
     }
 }

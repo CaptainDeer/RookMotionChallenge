@@ -19,9 +19,9 @@ interface UserDao {
     fun getUser(user: String): List<UserEntity>
 
     @Query(value = "select * from users")
-    fun getAllUsersAgain():List<UserEntity>
+    fun getAllUsersAgain(): List<UserEntity>
 
     @Query(value = "select * from users where :id Like id")
-    fun getUserDetail(id:Int) : UserEntity
+    fun getUserDetail(id: Int): UserEntity
 
 }

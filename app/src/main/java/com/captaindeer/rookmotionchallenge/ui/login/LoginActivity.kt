@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.captaindeer.rookmotionchallenge.ui.MainActivity
 import com.captaindeer.rookmotionchallenge.databinding.ActivityLoginBinding
+import com.captaindeer.rookmotionchallenge.ui.main.MainActivity
 import com.captaindeer.rookmotionchallenge.ui.forgotpassword.ForgotPasswordDialog
 import com.captaindeer.rookmotionchallenge.ui.registry.RegistryActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -13,7 +13,6 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity(), LoginInterface.View {
 
     private lateinit var binding: ActivityLoginBinding
-
     private var auth: FirebaseAuth? = null
     private var presenter: LoginPresenter? = null
 
@@ -42,7 +41,6 @@ class LoginActivity : AppCompatActivity(), LoginInterface.View {
         binding.forgot.setOnClickListener {
             ForgotPasswordDialog().show(supportFragmentManager, "customDialog")
         }
-
     }
 
     override fun onStart() {

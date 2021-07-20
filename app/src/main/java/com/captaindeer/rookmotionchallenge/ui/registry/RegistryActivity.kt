@@ -10,7 +10,6 @@ import com.captaindeer.rookmotionchallenge.ui.login.LoginActivity
 class RegistryActivity : AppCompatActivity(), RegistryInterface.View {
 
     private lateinit var binding: ActivityRegistryBinding
-
     private var presenter: RegistryPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +18,6 @@ class RegistryActivity : AppCompatActivity(), RegistryInterface.View {
         setContentView(binding.root)
 
         presenter = RegistryPresenter(this)
-
         binding.btnSubmit.setOnClickListener {
             if (binding.etNameNew.text?.isEmpty()!! || binding.etEmailNew.text?.isEmpty()!! || binding.etPasswordNew.text?.isEmpty()!! || binding.etRpasswordNew.text?.isEmpty()!!)
                 onError("Please fill all the fields")
@@ -45,5 +43,4 @@ class RegistryActivity : AppCompatActivity(), RegistryInterface.View {
     override fun onError(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
-
 }

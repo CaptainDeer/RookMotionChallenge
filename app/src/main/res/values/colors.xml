@@ -15,5 +15,7 @@
     <color name="green_confirm">#54E64A</color>
     <color name="red_cancel">#E64A4A</color>
     <color name="light_blue">#009ECF</color>
-    <color name="light_white">#5EFFFFFF</color>
+    <color name="light_white">#D6D6D6</color>
+    <color name="king_blue">#284C73</color>
+    <color name="orange">#B56928</color>
 </resources>

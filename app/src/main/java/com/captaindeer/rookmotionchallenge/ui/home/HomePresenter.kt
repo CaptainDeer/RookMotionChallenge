@@ -13,7 +13,6 @@ class HomePresenter(private val context: Context, private val view: HomeInterfac
 
     private var retrofit = RetrofitBuilder()
     private val database = LocalDatabase(context)
-
     private val job = Job()
     override val coroutineContext: CoroutineContext = job + Dispatchers.IO
 
