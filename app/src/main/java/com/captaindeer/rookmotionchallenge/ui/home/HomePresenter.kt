@@ -50,6 +50,14 @@ class HomePresenter(private val context: Context, private val view: HomeInterfac
         }
     }
 
+    override fun getAllUsersAgain(): List<UserEntity> {
+        return database.userDao().getAllUsersAgain()
+    }
+
+    override fun getUser(user: String): List<UserEntity> {
+        return database.userDao().getUser(user)
+    }
+
     override fun onCancel() {
         job.cancel()
     }

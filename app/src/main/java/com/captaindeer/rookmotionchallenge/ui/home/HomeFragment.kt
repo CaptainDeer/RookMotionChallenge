@@ -11,7 +11,8 @@ import com.captaindeer.rookmotionchallenge.data.local.entities.UserEntity
 import com.captaindeer.rookmotionchallenge.databinding.FragmentHomeBinding
 import com.captaindeer.rookmotionchallenge.ui.adapters.UsersAdapter
 
-class HomeFragment : Fragment(), HomeInterface.View {
+class HomeFragment : Fragment(), HomeInterface.View,
+    androidx.appcompat.widget.SearchView.OnQueryTextListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -39,15 +40,16 @@ class HomeFragment : Fragment(), HomeInterface.View {
         super.onViewCreated(view, savedInstanceState)
 
         initRecyclerView()
-
         presenter?.getAllUsers()
+        binding.searchView.setOnQueryTextListener(this)
+
     }
 
     override fun setListUsers(users: ArrayList<UserEntity>) {
         adapter.updateData(users)
     }
 
-    fun initRecyclerView() {
+    private fun initRecyclerView() {
         adapter = UsersAdapter(users)
         binding.rvHome.setHasFixedSize(true)
         binding.rvHome.layoutManager = LinearLayoutManager(requireContext())
@@ -67,4 +69,18 @@ class HomeFragment : Fragment(), HomeInterface.View {
         super.onStop()
         presenter?.onCancel()
     }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if (!query.isNullOrEmpty()) {
+            setListUsers(presenter!!.getUser(query) as ArrayList)
+        }
+        return false
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        if (newText.isNullOrBlank())
+            setListUsers(presenter!!.getAllUsersAgain() as ArrayList)
+        return false
+    }
+
 }

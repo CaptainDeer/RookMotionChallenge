@@ -10,6 +10,8 @@ interface HomeInterface {
     }
     interface Presenter{
         fun getAllUsers()
+        fun getAllUsersAgain(): List<UserEntity>
+        fun getUser(user: String):List<UserEntity>
         fun onCancel()
     }
 }

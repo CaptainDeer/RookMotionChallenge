@@ -15,4 +15,10 @@ interface UserDao {
     @Query(value = "select * from users")
     fun updatePosts(): List<UserEntity>
 
+    @Query(value = "select * from users where :user LIKE first_name or :user LIKE last_name")
+    fun getUser(user: String): List<UserEntity>
+
+    @Query(value = "select * from users")
+    fun getAllUsersAgain():List<UserEntity>
+
 }
