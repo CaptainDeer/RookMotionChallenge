@@ -21,4 +21,7 @@ interface UserDao {
     @Query(value = "select * from users")
     fun getAllUsersAgain():List<UserEntity>
 
+    @Query(value = "select * from users where :id Like id")
+    fun getUserDetail(id:Int) : UserEntity
+
 }

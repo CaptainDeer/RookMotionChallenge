@@ -16,11 +16,8 @@ class HomeFragment : Fragment(), HomeInterface.View,
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
     private var presenter: HomePresenter? = null
-
     private lateinit var adapter: UsersAdapter
-
     private var users = arrayListOf<UserEntity>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +37,7 @@ class HomeFragment : Fragment(), HomeInterface.View,
         super.onViewCreated(view, savedInstanceState)
 
         initRecyclerView()
+
         presenter?.getAllUsers()
         binding.searchView.setOnQueryTextListener(this)
 
